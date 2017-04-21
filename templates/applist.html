@@ -3,10 +3,11 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>AppGen</title>
+    <title>Movie finder</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
@@ -14,204 +15,185 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function () {
-
-    $('#test').val($('work'));
-
-
-    if ({{num_apps}} > 1) {
-        $("#app2").show();
-    }
-    if ({{num_apps}} > 2) {
-        $("#app3").show();
-    }
-    if ({{num_apps}} > 3) {
-        $("#app4").show();
-    }
-    if ({{num_apps}} > 4){
-        $("#app5").show();
-    }
-    if ({{num_apps}} > 5) {
-        $("#app6").show();
-    }
-    if ({{num_apps}} > 6) {
-        $("#app7").show();
-    }
-    if ({{num_apps}} > 7) {
-        $("#app8").show();
-    }
-    if ({{num_apps}} > 8) {
-        $("#app9").show();
-    }
-    if ({{num_apps}} > 9) {
-        $("#app10").show();
-    }
-
-
-    // $('#app1').click(function(){
-    //     $('#app_name').val('App 1');
-    // });
-    // $('#app2').click(function(){
-    //     $('#app_name').val('App 2');
-    // });
-    // $('#app3').click(function(){
-    //     $('#app_name').val('App 3');
-    // });
-    // $('#app4').click(function(){
-    //     $('#app_name').val('App 4');
-    // });
-    // $('#app5').click(function(){
-    //     $('#app_name').val('App 5');
-    // });
-    // $('#app6').click(function(){
-    //     $('#app_name').val('App 6');
-    // });
-    // $('#app7').click(function(){
-    //     $('#app_name').val('App 7');
-    // });
-    // $('#app8').click(function(){
-    //     $('#app_name').val('App 8');
-    // });
-    // $('#app9').click(function(){
-    //     $('#app_name').val('App 9');
-    // });
-    // $('#app10').click(function(){
-    //     $('#app_name').val('App 9');
-    // });
-
-
-  });
-</script>
-
-
-    <style>
-    @keyframes width {
-           0%, 100% {
-           transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
-      }
-      0% {
-           width: 0%;
-      }
-       100% {
-          width: 100%;
-      }
-    }
-    </style>
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   </head>
   <body>
     <header class="bar bar-nav">
-        <a href="/homeFromCreate" data-transition="slide-out">
-  <button class="btn btn-link btn-nav pull-left" onClick="location='/home/'">
-    <span class="icon icon-left-nav"></span>
-    Back
+      <a href="/"  data-transition="slide-out">
+<button class="btn btn-link btn-nav pull-left" onClick="location='/'">
+  <span class="icon icon-left-nav"></span>
+  Categories
 
-  </button>
-    </a>
-  <h1 class="title">Edit an Application</h1>
+</button>
+  </a>
 
+      <a class="icon icon-gear pull-right" href="#settingsModal"></a>
+      <h1 class="title">Books</h1>
 
-      <!-- Progress Bar -->
-            <div class="containerlower">
-              <div class="progress">
-                <div class="progress-bar">
+<br>
+<br>
 
-                </div>
-              </div>
-            </div>
-  </header>
+      <div class="segmented-control">
+  <a class="control-item active" href="#item1mobile">
+    Thing one
+  </a>
+  <a class="control-item" href="#item2mobile">
+    Thing two
+  </a>
+  <a class="control-item" href="#item3mobile">
+    Thing three
+  </a>
+</div>
+<div class="card">
+  <span id="item1mobile" class="control-content active">Item 1</span>
+  <span id="item2mobile" class="control-content">
+    <ul class="table-view">
+    <li class="table-view-cell media">
+      <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+        <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+        <div class="media-body">
+          Argo
+          <p>Lorem ipsum dolor sit amet, consectetur.</p>
+        </div>
+      </a>
+    </li>
+  </span>
+  <span id="item3mobile" class="control-content">Item 3</span>
+</div>
+    </header>
+
 
 
     <div class="content">
 
 <br>
-<p>Select an application</p>
-
-<form id="test" method="POST" action="/editapp/">
+<br>
+<br>
       <ul class="table-view">
-        <li class="table-view-cell" id="app1" onclick="document.getElementById('test').submit();">
-          <a class="navigate-right" href="/editapp/">
-            Application 1
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+            <div class="media-body">
+              App 1
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <input type="text" id="app_name" name="app_name" value="app 1">
-
-      </form>
-      <form id="test2" method="POST" action="/editapp/">
-        <li class="table-view-cell" id="app2" onClick="document.getElementById('test2').submit();" style="display:none">
-          <a class="navigate-right" href="/editapp/">
-            Application 2
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+            <div class="media-body">
+              App 2
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <input type="text" id="app_name" name="app_name" value="app 2">
-
-      </form>
-        <li class="table-view-cell" id="app3" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="/editapp/">
-            Application 3
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+            <div class="media-body">
+              App 3
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app4" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="/editapp/">
-            Application 4
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+            <div class="media-body">
+              App 4
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app5" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#/editapp/">
-            Application 5
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+            <div class="media-body">
+              App 5
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app6" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#">
-            Application 6
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+            <div class="media-body">
+              App 6
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app7" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#">
-            Application 7
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+            <div class="media-body">
+              App 7
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app8" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#">
-            Application 8
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+            <div class="media-body">
+              App 8
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
-        <li class="table-view-cell" id="app9" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#">
-            Application 9
-            <p></p>
-          </a>
-        </li>
-        <li class="table-view-cell" id="app10" onClick="location='/editapp/'" style="display:none">
-          <a class="navigate-right" href="#">
-            Application 10
-            <p></p>
+        <li class="table-view-cell media">
+          <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+            <div class="media-body">
+              App 9
+              <p>Category/Rating/etc</p>
+            </div>
           </a>
         </li>
       </ul>
-<input type="text" id="app_name" name="app_name" value="app 1">
-<input type="text" value={{num_apps}}>
-</form>
-
-<form method="POST" action="/createapp/">
-<div class="center">
-  <input type="submit" idname="submit" class="submit" value="Create Application">
-<input type="submit" name='test' id="test" class="submit" value="a">
-</div>
-</form>
-
-
     </div><!-- /.content -->
+
+    <!-- Settings modal -->
+    <div id="settingsModal" class="modal">
+      <header class="bar bar-nav">
+        <a class="icon icon-close pull-right" href="#settingsModal"></a>
+        <h1 class="title">Settings</h1>
+      </header>
+
+      <div class="content">
+        <form class="input-group">
+          <input type="text" placeholder="Full name">
+          <input type="email" placeholder="Email">
+          <input type="text" placeholder="Username">
+        </form>
+
+        <h5 class="content-padded">App settings</h5>
+
+        <ul class="table-view">
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-sound"></span>
+            <div class="media-body">
+              Enable sounds
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+          <li class="table-view-cell media">
+            <span class="media-object pull-left icon icon-person"></span>
+            <div class="media-body">
+              Parental controls
+            </div>
+            <div class="toggle">
+              <div class="toggle-handle"></div>
+            </div>
+          </li>
+        </ul>
+        <div class="content-padded">
+          <button class="btn btn-positive btn-block">Save settings</button>
+        </div>
+      </div>
+    </div><!-- /.modal -->
   </body>
 </html>

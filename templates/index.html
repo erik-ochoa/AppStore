@@ -73,78 +73,139 @@
 
 
 
-    <div class="bar bar-footer">
 
-      <!--<a class="icon icon-compose pull-right" href="#composeModal"></a>-->
-      <small class="updated-text">{{name}}</small>
-    </div>
 
     <div class="content">
 
 
-<form method="POST" action="/createapp/">
+<form method="POST" action="/applist/">
 <br>
-      <ul class="table-view">
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Books
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
+<ul class="table-view">
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="applist.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Book icon">
+      <div class="media-body" onClick="location='/applist/'">
+        Books
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="applist.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+      <div class="media-body">
+        Business
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+      <div class="media-body">
+        Catalogs
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+      <div class="media-body">
+        Education
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+      <div class="media-body">
+        Entertainment
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+      <div class="media-body">
+        Finance
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
+      <div class="media-body">
+        Food and Drink
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
+      <div class="media-body">
+        Games
+        <p></p>
+      </div>
+    </a>
+  </li>
+  <li class="table-view-cell media">
+    <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+      <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
+      <div class="media-body">
+        Health and Fitness
+        <p></p>
+      </div>
+    </a>
+  </li>
+</ul>
+</div><!-- /.content -->
 
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Business
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
+<!-- Settings modal -->
+<div id="settingsModal" class="modal">
+<header class="bar bar-nav">
+  <a class="icon icon-close pull-right" href="#settingsModal"></a>
+  <h1 class="title">Settings</h1>
+</header>
 
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Catalogs
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
+<div class="content">
+  <form class="input-group">
+    <input type="text" placeholder="Full name">
+    <input type="email" placeholder="Email">
+    <input type="text" placeholder="Username">
+  </form>
 
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Education
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
+  <h5 class="content-padded">App settings</h5>
 
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Entertainment
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
-
-        <li class="table-view-cell media">
-          <a class="navigate-right" id=link href="/createapp/" data-transition="slide-in">
-            <span class="media-object icon icon-pages pull-left"></span>
-            <div class="media-body" onClick="location='/createapp/'">
-              Finance
-              <!-- <input type="submit" idname="submit" class="submit" value="Create Application"> -->
-            </div>
-          </a>
-        </li>
-      </ul>
+  <ul class="table-view">
+    <li class="table-view-cell media">
+      <span class="media-object pull-left icon icon-sound"></span>
+      <div class="media-body">
+        Enable sounds
+      </div>
+      <div class="toggle">
+        <div class="toggle-handle"></div>
+      </div>
+    </li>
+    <li class="table-view-cell media">
+      <span class="media-object pull-left icon icon-person"></span>
+      <div class="media-body">
+        Parental controls
+      </div>
+      <div class="toggle">
+        <div class="toggle-handle"></div>
+      </div>
+    </li>
+  </ul>
+  <div class="content-padded">
+    <button class="btn btn-positive btn-block">Save settings</button>
+  </div>
+</div>
+</div><!-- /.modal -->
 
 
 </form>
