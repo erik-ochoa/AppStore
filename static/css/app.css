@@ -10,3 +10,9 @@
 .table-view-cell .icon {
   color: #007aff;
 }
+
+.icon_size {
+    width: 40px;
+    height: 40px;
+}
+

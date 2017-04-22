@@ -56,6 +56,12 @@ def main():
     
     return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2])
 
+
+# @app.route('/home/')
+# def home():
+#     appName = request.form['InputBox']
+#     return render_template("home.html")
+
 @app.route('/applist/', methods = ['POST', 'GET'])
 def applist():
     conn = mysql.connect()
@@ -77,17 +83,6 @@ def applist():
     if request.method == 'POST':
         #appName = request.form['appName']
         return render_template("applist.html")
-
-
-
-
-
-
-
-# @app.route('/home/')
-# def home():
-#     appName = request.form['InputBox']
-#     return render_template("home.html")
 
 
 

@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>AppGen</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta charset="utf-8">
+        <title>AppGen</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-    <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+        <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      
+      <script>
+        $(document).ready(function () {
 
-    <!-- Progress Bar Animation -->
-    <style>
-    @keyframes width {
-           0%, 100% {
-           transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
-      }
-      0% {
-           width: 10%;
-      }
-       100% {
-          width: 20%;
-      }
-    }
-    </style>
+        $('#test').val($('work'));
 
-    <script>
-    $(document).ready(function () {
+        if ({{num_apps}} > 0) {
+            $("#edit").show();
+        }
+        if ({{num_apps}} == 10) {
+            $("#permission").show();
+        }
 
-    $('#test').val($('work'));
-
-    if ({{num_apps}} > 0) {
-        $("#edit").show();
-    }
-    if ({{num_apps}} == 10) {
-        $("#permission").show();
-    }
-
-  });
-    </script>
-
-
+        });
+      </script>
+      
+      <style>
+          .category_size {
+              padding-top: 8px !important;
+              padding-bottom: 8px !important;
+          }
+          .name_position {
+              padding-top: 0.5em;
+          }
+      </style>
   </head>
   <body>
 
@@ -76,84 +69,77 @@
     <form method="POST" action="/applist/">
     <br>
     <ul class="table-view">
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="applist.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="{{i0}}" style="width: 64px; height: 64px" alt="Book icon">
+          <img class="media-object pull-left icon_size" src="{{i0}}" alt="Book icon">
           <div class="media-body" onClick="location='/applist/'">
-            {{c0}}
-            <p></p>
+            <p class="name_position">
+                {{c0}}
+            </p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="applist.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="{{i1}}" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="{{i1}}">
           <div class="media-body">
-            {{c1}}
-            <p></p>
+            <p class="name_position">{{c1}}</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="{{i2}}" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="{{i2}}">
           <div class="media-body">
-            {{c2}}
-            <p></p>
+            <p class="name_position">{{c2}}</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn0.iconfinder.com/data/icons/education-flat-7/128/27_Math-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn0.iconfinder.com/data/icons/education-flat-7/128/27_Math-128.png">
           <div class="media-body">
-            Education
-            <p></p>
+            <p class="name_position">Education</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn3.iconfinder.com/data/icons/social-7/500/Youtube_play_social_video-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn3.iconfinder.com/data/icons/social-7/500/Youtube_play_social_video-128.png">
           <div class="media-body">
-            Entertainment
-            <p></p>
+            <p class="name_position">Entertainment</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn3.iconfinder.com/data/icons/popular-services-1/512/paypal-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn3.iconfinder.com/data/icons/popular-services-1/512/paypal-128.png">
           <div class="media-body">
-            Finance
-            <p></p>
+            <p class="name_position">Finance</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/coffee-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn4.iconfinder.com/data/icons/pictype-free-vector-icons/16/coffee-128.png">
           <div class="media-body">
-            Food and Drink
-            <p></p>
+            <p class="name_position">Food and Drink</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/steam-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn0.iconfinder.com/data/icons/social-flat-rounded-rects/512/steam-128.png">
           <div class="media-body">
-            Games
-            <p></p>
+            <p class="name_position">Games</p>
           </div>
         </a>
       </li>
-      <li class="table-view-cell media">
+      <li class="table-view-cell media category_size">
         <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
-          <img class="media-object pull-left" src="https://cdn3.iconfinder.com/data/icons/fitness-24/512/5-128.png" style="width: 64px; height: 64px">
+          <img class="media-object pull-left icon_size" src="https://cdn3.iconfinder.com/data/icons/fitness-24/512/5-128.png">
           <div class="media-body">
-            Health and Fitness
-            <p></p>
+            <p class="name_position">Health and Fitness</p>
           </div>
         </a>
       </li>
