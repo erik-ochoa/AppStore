@@ -19,12 +19,17 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<script>
-  $.fn.stars = function() {
-      return $(this).each(function() {
-          $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).html())))) * 16));
-      });
-  }
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
 </script>
 
 <style>
@@ -83,6 +88,30 @@ p {
 .get-fix {
   padding-right: 42px !important;
 }
+.smallUnderText {
+  font-size: 8px;
+  color: gray;
+  position: absolute; !important;
+  right: 7.5em;
+  top: 6.5em;
+}
+.smallUnderText2 {
+  font-size: 8px;
+  color: gray;
+  position: absolute; !important;
+  right: 6.5em;
+  top: 7.6em;
+}
+.smallFont {
+  font-size: 9px;
+  color: gray;
+  position: relative;
+  top: -1em;
+}
+
+.active{
+    visibility: hidden;
+}
 
 </style>
 
@@ -110,7 +139,7 @@ p {
   <a class="control-item active" href="#item1mobile">
     Thing one
   </a>
-  <a class="control-item" href="#item2mobile">
+  <a class="control-item" href="#item2mobile" onclick="toggle_visibility('testy');">
     Thing two
   </a>
   <a class="control-item" href="#item3mobile">
@@ -144,112 +173,129 @@ p {
 <br>
 
 
-      <ul class="table-view">
+      <ul id="testy" class="table-view">
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">1</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image">
             <div class="media-body">
               App 1
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-30">★★★★★</span><span>(100)</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-30">★★★★★</span><span class="smallFont">(8210)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">2</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 2
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-75">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-75">★★★★★</span><span class="smallFont">(400)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
             <p class="media-object pull-left">3</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 3
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span><span class="smallFont">(121)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">4</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
             <div class="media-body">
               App 4
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-20">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-20">★★★★★</span><span class="smallFont">(7)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">5</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 5
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-90">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-90">★★★★★</span><span class="smallFont">(1307)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">6</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 6
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-100">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-100">★★★★★</span><span class="smallFont">(1)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">7</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
             <div class="media-body">
               App 7
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-10">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-10">★★★★★</span><span class="smallFont">(4)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">8</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 8
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span><span class="smallFont">(330)</span></div>
             </div>
           </a>
         </li>
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">9</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 9
               <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-50">★★★★★</span></div>
+              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-50">★★★★★</span><span class="smallFont">(321)</span></div>
             </div>
           </a>
         </li>
