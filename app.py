@@ -68,11 +68,12 @@ def applist():
     cursor = conn.cursor()
 
     #This gets length of the categories table
-    if request.method == 'POST':
+    # if request.method == 'POST':
         #appName = request.form['appName']
-        return render_template("applist.html")
+    return render_template("applist.html")
 
 
+    # return 'test'
 
 
 
