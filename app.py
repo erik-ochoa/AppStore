@@ -71,6 +71,7 @@ def applist():
     # if request.method == 'POST':
         #appName = request.form['appName']
     return render_template("applist.html")
+    #return current_app.send_static_file('applist.html')
 
 
     # return 'test'
