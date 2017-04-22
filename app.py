@@ -76,7 +76,7 @@ def applist():
 
     #Assigning every category to a variable (e.g C1 stands for category 1)
     categories_list = []
-    i =0; 
+    i =0;
     while i < table_len:
         categories_list[i]=cursor.fetchone()[i]
         print(categories_list[i])
