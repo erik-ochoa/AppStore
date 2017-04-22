@@ -68,19 +68,18 @@ def applist():
     cursor = conn.cursor()
     
     #This gets length of the categories table
-    table_len = cursor.execute("SELECT ID FROM categories ORDER BY id DESC LIMIT 1")
-    print (table_len)
+    #table_len = cursor.execute("SELECT ID FROM categories ORDER BY id DESC LIMIT 1")
+    #print (table_len)
     
     #This gets all the categories from the database
-    cursor.execute("SELECT * FROM categories")
+    #cursor.execute("SELECT * FROM categories")
     
     #Assigning every category to a variable (e.g C1 stands for category 1)
-    categories_list = []
-    i =0; 
-    while i < table_len:
-        categories_list[i]=cursor.fetchone()[i]
-        print(categories_list[i])
-
+    #categories_list = []
+    #i =0; 
+    #while i < table_len:
+    #    categories_list[i]=cursor.fetchone()[i]
+    #    print(categories_list[i])
     if request.method == 'POST':
         #appName = request.form['appName']
         return render_template("applist.html")
