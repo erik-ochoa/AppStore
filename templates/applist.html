@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,152 +6,126 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-
-
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-
-<script type="text/javascript">
-<!--
-    function toggle_visibility(id) {
-       var e = document.getElementById(id);
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-//-->
-</script>
-
-<style>
-body { font-size: 18px; }
-
-.stars-container {
-  position: relative;
-  display: inline-block;
-  color: transparent;
-}
-
-.stars-container:before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '★★★★★';
-  color: lightgray;
-}
-
-.stars-container:after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '★★★★★';
-  color: gold;
-  overflow: hidden;
-}
-
-.stars-0:after { width: 0%; }
-.stars-10:after { width: 10%; }
-.stars-20:after { width: 20%; }
-.stars-30:after { width: 30%; }
-.stars-40:after { width: 40%; }
-.stars-50:after { width: 50%; }
-.stars-60:after { width: 60%; }
-.stars-70:after { width: 70%; }
-.stars-75:after { width: 75%; }
-.stars-80:after { width: 80%; }
-.stars-90:after { width: 90%; }
-.stars-100:after { width: 100; }
-
-
-p {
-    font-size : 12px;
-    background-color : transparents;
-    padding : 0;
-    margin : 0;
-    line-height : 20px;
-}
-
-.absoluteRight{
-  margin-left: 0px;
-  position: relative;
-  float: right;
-}
-.get-fix {
-  padding-right: 42px !important;
-}
-.smallUnderText {
-  font-size: 8px;
-  color: gray;
-  position: absolute; !important;
-  right: 7.5em;
-  top: 6.5em;
-}
-.smallUnderText2 {
-  font-size: 8px;
-  color: gray;
-  position: absolute; !important;
-  right: 6.5em;
-  top: 7.6em;
-}
-.smallFont {
-  font-size: 9px;
-  color: gray;
-  position: relative;
-  top: -1em;
-}
-
-.segmented-control .control-item.active{
-    color: #fff;
-    background-color: #2587f2 !important;
-}
-
-.segmented-control {
-    background-color: transparent;
-    border: 1px solid #2587f2 !important;
-}
-
-.segmented-control .control-item {
-    color: #2587f2;
-    border-color: #929292;
-    -webkit-transition: background-color .1s linear;
-    -moz-transition: background-color .1s linear;
-    transition: background-color .1s linear;
-}
-
-.bar .segmented-control {
-    top: 7px;
-    /* margin: 0 auto; */
-    margin-left: 3em;
-    margin-right: 3em;
-}
-</style>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      <!--
+          function toggle_visibility(id) {
+             var e = document.getElementById(id);
+             if(e.style.display == 'block')
+                e.style.display = 'none';
+             else
+                e.style.display = 'block';
+          }
+      //-->
+    </script>
+    <style>
+      body { font-size: 18px; }
+      .stars-container {
+      position: relative;
+      display: inline-block;
+      color: transparent;
+      }
+      .stars-container:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '★★★★★';
+      color: lightgray;
+      }
+      .stars-container:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '★★★★★';
+      color: gold;
+      overflow: hidden;
+      }
+      .stars-0:after { width: 0%; }
+      .stars-10:after { width: 10%; }
+      .stars-20:after { width: 20%; }
+      .stars-30:after { width: 30%; }
+      .stars-40:after { width: 40%; }
+      .stars-50:after { width: 50%; }
+      .stars-60:after { width: 60%; }
+      .stars-70:after { width: 70%; }
+      .stars-75:after { width: 75%; }
+      .stars-80:after { width: 80%; }
+      .stars-90:after { width: 90%; }
+      .stars-100:after { width: 100; }
+      p {
+      font-size : 12px;
+      background-color : transparents;
+      padding : 0;
+      margin : 0;
+      line-height : 20px;
+      }
+      .absoluteRight{
+      margin-left: 0px;
+      position: relative;
+      float: right;
+      }
+      .get-fix {
+      padding-right: 42px !important;
+      }
+      .smallUnderText {
+      font-size: 8px;
+      color: gray;
+      position: absolute; !important;
+      right: 7.5em;
+      top: 6.5em;
+      }
+      .smallUnderText2 {
+      font-size: 8px;
+      color: gray;
+      position: absolute; !important;
+      right: 6.5em;
+      top: 7.6em;
+      }
+      .smallFont {
+      font-size: 9px;
+      color: gray;
+      position: relative;
+      top: -1em;
+      }
+      .segmented-control .control-item.active{
+      color: #fff;
+      background-color: #2587f2 !important;
+      }
+      .segmented-control {
+      background-color: transparent;
+      border: 1px solid #2587f2 !important;
+      }
+      .segmented-control .control-item {
+      color: #2587f2;
+      border-color: #929292;
+      -webkit-transition: background-color .1s linear;
+      -moz-transition: background-color .1s linear;
+      transition: background-color .1s linear;
+      }
+      .bar .segmented-control {
+      top: 7px;
+      /* margin: 0 auto; */
+      margin-left: 3em;
+      margin-right: 3em;
+      }
+    </style>
   </head>
   <body>
-
-
-
     <header style="height: 78px" class="bar bar-nav">
       <a href="/"  data-transition="slide-out">
-<button class="btn btn-link btn-nav pull-left" onClick="location='/'">
-  <span class="icon icon-left-nav"></span>
-  Categories
-
-</button>
-  </a>
-
+      <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
+      <span class="icon icon-left-nav"></span>
+      Categories
+      </button>
+      </a>
       <a class="icon icon-list pull-right" href="#settingsModal"></a>
       <h1 class="title">Books</h1>
-<hr style="height:15px; visibility:hidden;" />
-
+      <hr style="height:15px; visibility:hidden;" />
       <nav class="title">
         <div class="segmented-control">
           <a class="control-item active" href="#item1mobile">Paid</a>
@@ -160,18 +133,10 @@ p {
           <a class="control-item" href="#item3mobile">Top Grossing</a>
         </div>
       </nav>
-
-<br>
-
+      <br>
     </header>
-
-
-
     <div class="content">
-
-
-<hr style="height:15px; visibility:hidden;" />
-
+      <hr style="height:15px; visibility:hidden;" />
       <ul id="item1mobile" class="table-view control-content active">
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
@@ -182,7 +147,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image">
             <div class="media-body">
               App 1
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-30">★★★★★</span><span class="smallFont">(8210)</span></div>
             </div>
           </a>
@@ -196,7 +161,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 2
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-75">★★★★★</span><span class="smallFont">(400)</span></div>
             </div>
           </a>
@@ -205,12 +170,12 @@ p {
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
-              <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">3</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 3
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span><span class="smallFont">(121)</span></div>
             </div>
           </a>
@@ -224,7 +189,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
             <div class="media-body">
               App 4
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-20">★★★★★</span><span class="smallFont">(7)</span></div>
             </div>
           </a>
@@ -238,7 +203,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 5
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-90">★★★★★</span><span class="smallFont">(1307)</span></div>
             </div>
           </a>
@@ -252,7 +217,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 6
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-100">★★★★★</span><span class="smallFont">(1)</span></div>
             </div>
           </a>
@@ -266,7 +231,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Argo's poster">
             <div class="media-body">
               App 7
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-10">★★★★★</span><span class="smallFont">(4)</span></div>
             </div>
           </a>
@@ -280,7 +245,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Skyfall's poster">
             <div class="media-body">
               App 8
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span><span class="smallFont">(330)</span></div>
             </div>
           </a>
@@ -294,7 +259,7 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 9
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-50">★★★★★</span><span class="smallFont">(321)</span></div>
             </div>
           </a>
@@ -308,18 +273,15 @@ p {
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
               App 10
-              <p>Books</p>
+              <p>{{category}}</p>
               <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-60">★★★★★</span><span class="smallFont">(544)</span></div>
             </div>
           </a>
         </li>
-
         <br>
         <br>
         <br>
       </ul>
-
-
       <ul id="item2mobile" class="table-view control-content">
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
@@ -353,7 +315,7 @@ p {
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
-              <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
+            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
             <p class="media-object pull-left">3</p>
             <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image for Wreck-it Ralph's poster">
             <div class="media-body">
@@ -366,12 +328,7 @@ p {
         <br>
         <br>
         <br>
-
       </ul>
-
-
-
-
       <ul id="item3mobile" class="table-view control-content">
         <li class="table-view-cell get-fix media">
           <a href="choose-theater.html" data-transition="slide-in">
@@ -405,11 +362,8 @@ p {
         <br>
         <br>
       </ul>
-
-
-
-    </div><!-- /.content -->
-
+    </div>
+    <!-- /.content -->
     <!-- Settings modal -->
     <div id="settingsModal" class="modal">
       <header class="bar bar-nav">
@@ -417,45 +371,40 @@ p {
         <a class="icon icon-close pull-right" href="#settingsModal"></a>
         <h1 class="title">Wish List</h1>
       </header>
-
       <div class="content">
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-        <h3 style="text-align: center; font-weight:normal;">Wish List</h5>
-
-
-  <p style="text-align: center">You don't currently have anything in your Wish List.</p>
-
-
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3 style="text-align: center; font-weight:normal;">
+        Wish List</h5>
+        <p style="text-align: center">You don't currently have anything in your Wish List.</p>
       </div>
-    </div><!-- /.modal -->
-
+    </div>
+    <!-- /.modal -->
     <nav class="bar bar-tab">
-  <a class="tab-item" href="#">
-    <span class="icon icon-star"></span>
-    <span class="tab-label">Featured</span>
-  </a>
-  <a class="tab-item" href="#">
-    <span class="icon icon-list"></span>
-    <span class="tab-label">Top Charts</span>
-  </a>
-  <a class="tab-item" href="#">
-    <span class="icon icon-info"></span>
-    <span class="tab-label">Explore</span>
-  </a>
-  <a class="tab-item" href="#">
-    <span class="icon icon-search"></span>
-    <span class="tab-label">Search</span>
-  </a>
-  <a class="tab-item" href="#">
-    <span class="icon icon-download"></span>
-    <span class="tab-label">Updates</span>
-  </a>
-</nav>
+      <a class="tab-item" href="#">
+      <span class="icon icon-star"></span>
+      <span class="tab-label">Featured</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-list"></span>
+      <span class="tab-label">Top Charts</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-info"></span>
+      <span class="tab-label">Explore</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-search"></span>
+      <span class="tab-label">Search</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-download"></span>
+      <span class="tab-label">Updates</span>
+      </a>
+    </nav>
   </body>
 </html>

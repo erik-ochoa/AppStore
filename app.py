@@ -45,37 +45,43 @@ def main():
     c_list = []
     img_list = []
     i = 0
-    while i < 6:
+    while i < 10:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         c_list.append(cursor.fetchone()[0])
 
         cursor.execute("SELECT image_link FROM categories WHERE id=%s",(i))
         img_list.append(cursor.fetchone()[0])
-        print(img_list[i])
         i = i+1
-    return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], c3 = c_list[3], c4 = c_list[4], c5 = c_list[5], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2], i3 = img_list[3], i4 = img_list[4], i5 = img_list[5])
+    return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], c3 = c_list[3], c4 = c_list[4], c5 = c_list[5], c6 = c_list[6], c7 = c_list[7], c8 = c_list[8], c9 = c_list[9], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2], i3 = img_list[3], i4 = img_list[4], i5 = img_list[5], i6 = img_list[6], i7 = img_list[7], i8 = img_list[8], i9 = img_list[9])
 
-
-# @app.route('/home/')
-# def home():
-#     appName = request.form['InputBox']
-#     return render_template("home.html")
 
 @app.route('/applist/', methods = ['POST', 'GET'])
 def applist():
     conn = mysql.connect()
     cursor = conn.cursor()
-
-    #This gets length of the categories table
-    # if request.method == 'POST':
-        #appName = request.form['appName']
-    return render_template("applist.html")
+    
+    #Getting gategory from previous page
+    #category= "test"
+    print("go")
+    category = request.form['getcategory']
+    print(category + "hi")
+        
+    
+    return render_template("applist.html", category=category)
     #return current_app.send_static_file('applist.html')
 
 
-    # return 'test'
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 @app.route('/home/', methods = ['POST', 'GET'])
 def home():
