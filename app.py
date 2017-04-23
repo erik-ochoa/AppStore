@@ -26,7 +26,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'jack8998'
+app.config['MYSQL_DATABASE_PASSWORD'] = '1998compsci'
 app.config['MYSQL_DATABASE_DB'] = 'appstore_db'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -45,7 +45,7 @@ def main():
     c_list = []
     img_list = []
     i = 0
-    while i < 3:
+    while i < 6:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         c_list.append(cursor.fetchone()[0])
 
@@ -53,8 +53,7 @@ def main():
         img_list.append(cursor.fetchone()[0])
         print(img_list[i])
         i = i+1
-
-    return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2])
+    return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], c3 = c_list[3], c4 = c_list[4], c5 = c_list[5], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2], i3 = img_list[3], i4 = img_list[4], i5 = img_list[5])
 
 
 # @app.route('/home/')
