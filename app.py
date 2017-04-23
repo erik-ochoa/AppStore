@@ -61,13 +61,15 @@ def applist():
     cursor = conn.cursor()
     
     #Getting gategory from previous page
-    #category= "test"
-    print("go")
     category = request.form['getcategory']
-    print(category + "hi")
-        
+    name_list = []
+    i = 0
+    while i < 10:
+        cursor.execute("SELECT name FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        name_list.append(cursor.fetchone()[0])
+        i = i+1
     
-    return render_template("applist.html", category=category)
+    return render_template("applist.html", category=category, n0 = name_list[0], n1 = name_list[1], n2 = name_list[2], n3 = name_list[3], n4 = name_list[4], n5 = name_list[5], n6 = name_list[6], n7 = name_list[7], n8 = name_list[8], n9 = name_list[9])
     #return current_app.send_static_file('applist.html')
 
 
