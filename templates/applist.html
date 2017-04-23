@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/rating.css') }}">
+
 
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
 
@@ -109,10 +109,30 @@ p {
   top: -1em;
 }
 
-.active{
-
+.segmented-control .control-item.active{
+    color: #fff;
+    background-color: #2587f2 !important;
 }
 
+.segmented-control {
+    background-color: transparent;
+    border: 1px solid #2587f2 !important;
+}
+
+.segmented-control .control-item {
+    color: #2587f2;
+    border-color: #929292;
+    -webkit-transition: background-color .1s linear;
+    -moz-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+}
+
+.bar .segmented-control {
+    top: 7px;
+    /* margin: 0 auto; */
+    margin-left: 3em;
+    margin-right: 3em;
+}
 </style>
 
   </head>
@@ -120,7 +140,7 @@ p {
 
 
 
-    <header class="bar bar-nav">
+    <header style="height: 80px" class="bar bar-nav">
       <a href="/"  data-transition="slide-out">
 <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
   <span class="icon icon-left-nav"></span>
@@ -131,32 +151,24 @@ p {
 
       <a class="icon icon-gear pull-right" href="#settingsModal"></a>
       <h1 class="title">Books</h1>
+<hr style="height:15px; visibility:hidden;" />
+
+      <nav class="title">
+        <div class="segmented-control">
+          <a class="control-item active" href="#item1mobile">Paid</a>
+          <a class="control-item" href="#item2mobile">Free</a>
+          <a class="control-item" href="#item3mobile">Top Grossing</a>
+        </div>
+      </nav>
 
 <br>
-<br>
- <div>
-      <div class="segmented-control">
-  <a class="control-item active" href="#item1mobile">
-    Thing one
-  </a>
-  <a class="control-item" href="#item2mobile" onclick="toggle_visibility('testy');">
-    Thing two
-  </a>
-  <a class="control-item" href="#item3mobile">
-    Thing three
-  </a>
-</div>
-<div class="card">
-<!-- Where the thing1/2/3 was -->
-</div>
-</div>
+
     </header>
 
 
 
     <div class="content">
 
-<br>
 <br>
 <br>
 
@@ -425,15 +437,15 @@ p {
 
     <nav class="bar bar-tab">
   <a class="tab-item" href="#">
-    <span class="icon icon-home"></span>
+    <span class="icon icon-star"></span>
     <span class="tab-label">Featured</span>
   </a>
   <a class="tab-item" href="#">
-    <span class="icon icon-person"></span>
+    <span class="icon icon-list"></span>
     <span class="tab-label">Top Charts</span>
   </a>
   <a class="tab-item" href="#">
-    <span class="icon icon-star-filled"></span>
+    <span class="icon icon-info"></span>
     <span class="tab-label">Explore</span>
   </a>
   <a class="tab-item" href="#">
@@ -441,7 +453,7 @@ p {
     <span class="tab-label">Search</span>
   </a>
   <a class="tab-item" href="#">
-    <span class="icon icon-gear"></span>
+    <span class="icon icon-download"></span>
     <span class="tab-label">Updates</span>
   </a>
 </nav>
