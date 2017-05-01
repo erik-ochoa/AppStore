@@ -42,17 +42,17 @@ def main():
     #table_len = cursor.execute("SELECT ID FROM categories ORDER BY id DESC LIMIT 1")
 
     #Assigning every category to an index c_list and image link to img_link
-    c_list = []
-    img_list = []
+    categories= []
+    images = []
     i = 0
     while i < 10:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
-        c_list.append(cursor.fetchone()[0])
+        categories.append(cursor.fetchone()[0])
 
         cursor.execute("SELECT image_link FROM categories WHERE id=%s",(i))
-        img_list.append(cursor.fetchone()[0])
+        images.append(cursor.fetchone()[0])
         i = i+1
-    return render_template("index.html", c0 = c_list[0], c1 = c_list[1], c2 = c_list[2], c3 = c_list[3], c4 = c_list[4], c5 = c_list[5], c6 = c_list[6], c7 = c_list[7], c8 = c_list[8], c9 = c_list[9], i0 = img_list[0], i1 = img_list[1], i2 = img_list[2], i3 = img_list[3], i4 = img_list[4], i5 = img_list[5], i6 = img_list[6], i7 = img_list[7], i8 = img_list[8], i9 = img_list[9])
+    return render_template("index.html", categories = categories, images = images)
 
 
 @app.route('/applist/', methods = ['POST', 'GET'])
@@ -62,22 +62,43 @@ def applist():
     
     #Getting gategory from previous page
     category = request.form['getcategory']
-    name_list = []
+    names = []
+    images = []
+    downloads = []
+    ratings = []
+    ratings_count = []
     i = 0
     while i < 10:
         cursor.execute("SELECT name FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        name_list.append(cursor.fetchone()[0])
+        names.append(cursor.fetchone()[0])
+        
+        cursor.execute("SELECT image_link FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        #uncommend below to display images
+        images.append(cursor.fetchone()[0])
+        #uncomment below to get rid of images
+        #image_list.append('noimage')
+        
+        cursor.execute("SELECT downloads FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        downloads.append(cursor.fetchone()[0])
+        cursor.execute("SELECT ratings_count FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        ratings_count.append(str(cursor.fetchone()[0]))
+        cursor.execute("SELECT ratings FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        ratings.append(str(int(cursor.fetchone()[0]*20)))
+        print (ratings[i])
+        
         i = i+1
     
-    return render_template("applist.html", category=category, n0 = name_list[0], n1 = name_list[1], n2 = name_list[2], n3 = name_list[3], n4 = name_list[4], n5 = name_list[5], n6 = name_list[6], n7 = name_list[7], n8 = name_list[8], n9 = name_list[9])
+    #uncomment below to display download count
+    version = 0
+    #uncomment below to display ratings
+    #version = 1
+    
+    return render_template("applist.html", category=category, version = version, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
     #return current_app.send_static_file('applist.html')
 
 
     
-    
-    
-    
-    
+
     
     
     
