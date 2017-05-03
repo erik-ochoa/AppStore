@@ -26,7 +26,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'jack8998'
+app.config['MYSQL_DATABASE_PASSWORD'] = '1998compsci'
 app.config['MYSQL_DATABASE_DB'] = 'appstore_db'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -97,45 +97,16 @@ def applist():
     #return current_app.send_static_file('applist.html')
 
 @app.route('/apppage/', methods = ['POST', 'GET'])
-def applist():
+def apppage():
     conn = mysql.connect()
     cursor = conn.cursor()
-
-    #Getting gategory from previous page
+    name = request.form['getname']
     category = request.form['getcategory']
-    names = []
-    images = []
-    downloads = []
-    ratings = []
-    ratings_count = []
-    i = 0
-    while i < 10:
-        cursor.execute("SELECT name FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        names.append(cursor.fetchone()[0])
-
-        cursor.execute("SELECT image_link FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        #uncommend below to display images
-        images.append(cursor.fetchone()[0])
-        #uncomment below to get rid of images
-        #image_list.append('noimage')
-
-        cursor.execute("SELECT downloads FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        downloads.append(cursor.fetchone()[0])
-        cursor.execute("SELECT ratings_count FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        ratings_count.append(str(cursor.fetchone()[0]))
-        cursor.execute("SELECT ratings FROM applications WHERE id=%s AND category_name=%s",(i, category))
-        ratings.append(str(int(cursor.fetchone()[0]*20)))
-        print (ratings[i])
-
-        i = i+1
-
-    #uncomment below to display download count
-    version = 0
-    #uncomment below to display ratings
-    #version = 1
-
-    return render_template("app.html", category=category, version = version, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
-    #return current_app.send_static_file('applist.html')
+   
+    cursor.execute("SELECT downloads FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    downloads = cursor.fetchone()[0]
+    
+    return render_template("apppage.html", name = name, category = category, downloads = downloads)
 
 if __name__ == "__main__":
     app.run()
