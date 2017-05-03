@@ -25,6 +25,11 @@
                 $(".downloads").show(); 
             }
         });
+      function setCategory(category, name) { 
+        document.getElementById('getcategory').value = category;
+        document.getElementById('getname').value = name;
+        document.forms['send_form'].submit();
+      } 
     </script>
     <style>
       body { font-size: 18px; }
@@ -145,25 +150,9 @@
     </header>
       
 <!-- Paid -->
+    <form action="/apppage/" method="POST" id="send_form" >  
     <div class="content">
       <hr style="height:15px; visibility:hidden;" />
-      <ul id="item1mobile" class="table-view control-content">
-        <li class="table-view-cell get-fix media">
-          <a href="choose-theater.html" data-transition="slide-in">
-            <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
-            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
-            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
-            <p class="media-object pull-left">1</p>
-            <img class="media-object pull-left app_size" src="https://lh3.googleusercontent.com/vIJ7bv0rBwc3IdHaocUXloyLhJR6_vGhpwQGpXMR3ZD8dK_OnXpzPgb2FSpXnol-QipG=w300" alt="Placeholder image">
-            <div class="media-body">
-              {{n0}}
-              <p>{{category}}</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-30">★★★★★</span><span class="smallFont">(8210)</span></div>
-            </div>
-          </a>
-        </li>
-        <br>
-      </ul>    
         
 <!-- Free -->
       <ul id="item2mobile" class="table-view control-content active">
@@ -303,28 +292,14 @@
           </a>
         </li>
           <input type="text" style="display:none" id="getversion" name="getversion" value="default">
+          <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
+          <input type="text" class="hidden_input" id="getname" name="getcategory" value="default">
         <br>
 
       </ul>
         
 <!--Top Grossing -->
-      <ul id="item3mobile" class="table-view control-content">
-        <li class="table-view-cell get-fix media">
-          <a href="choose-theater.html" data-transition="slide-in">
-            <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
-            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
-            <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText2">Purchases</span>
-            <p class="media-object pull-left">1</p>
-            <img class="media-object pull-left" src="http://placehold.it/64x64" alt="Placeholder image">
-            <div class="media-body">
-              App 1
-              <p>Books</p>
-              <div><span style="top: -.3em; left: -.04em;" class="stars-container stars-30">★★★★★</span><span class="smallFont">(8210)</span></div>
-            </div>
-          </a>
-        </li>
-        <br>
-      </ul>
+
     </div>
       
 <!-- /.modal -->
@@ -350,5 +325,6 @@
       <span class="tab-label">Updates</span>
       </a>
     </nav>
+    </form>
   </body>
 </html>
