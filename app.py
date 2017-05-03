@@ -84,7 +84,6 @@ def applist():
         ratings_count.append(str(cursor.fetchone()[0]))
         cursor.execute("SELECT ratings FROM applications WHERE id=%s AND category_name=%s",(i, category))
         ratings.append(str(int(cursor.fetchone()[0]*20)))
-        print (ratings[i])
 
         i = i+1
 
