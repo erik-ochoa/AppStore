@@ -3,22 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>AppGen</title>
+    <!--Making the page feel more natural on mobile devices -->  
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--Linking ratchet framework --> 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+    <!-- our css file -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <!-- ratchet framework javaScript -->
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
+      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+<!-- javaScript --> 
     <script>
       function setCategory(category) {
         document.getElementById('getcategory').value = category;
         document.forms['send_form'].submit();
       }
     </script>
-
+<!-- CSS -->
     <style>
       .category_size {
       padding-top: 8px !important;
@@ -32,6 +38,7 @@
       }
     </style>
   </head>
+<!-- body -->  
   <body>
     <header class="bar bar-nav">
       <!-- <a href="/"  data-transition="slide-out">
@@ -50,6 +57,7 @@
         </div>
         </div> -->
     </header>
+
     <div class="content">
       <form action="/applist/" method="POST" id="send_form" >
         <ul class="table-view">
@@ -135,11 +143,11 @@
           </li>
           <li class="table-view-cell media category_size" onClick="setCategory('{{categories[9]}}')">
               <div class="media-body">
-  <hr style="height:7em; visibility:hidden;" />
+                <hr style="height:7em; visibility:hidden;" />
               </div>
           </li>
         </ul>
-
+          
         <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
       </form>
 

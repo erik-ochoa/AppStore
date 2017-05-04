@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <title>App List</title>
+    <!--Making the page feel more natural on mobile devices -->  
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--Linking ratchet framework --> 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+    <!-- our css file -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <!-- ratchet framework javaScript -->
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
     <!--jquery -->
     <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.min.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--Jquery-->
+    <!--javaScript-->
     <script>
      
     </script>
