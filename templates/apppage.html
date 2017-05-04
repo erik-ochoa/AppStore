@@ -116,6 +116,13 @@
       .InfoSpan{
         padding-left:3em;
         color:black;
+        position: fixed;
+        left: 100px;
+      }
+      #moveup {
+        position: fixed;
+        top: 100px;
+            
       }
     </style>
   </head>
@@ -132,34 +139,29 @@
 
     </header>
 
-  <div class="content">
-
-<ul class="table-view">
+    <div class="content">
+      <ul class="table-view">
         <li class="table-view-cell media category_size">
-
-
-            <img class="media-object pull-left app_image_size" src="https://lh3.googleusercontent.com/vIJ7bv0rBwc3IdHaocUXloyLhJR6_vGhpwQGpXMR3ZD8dK_OnXpzPgb2FSpXnol-QipG=w300">
+            <img class="media-object pull-left app_image_size" src="{{image_link}}">
             <div class="media-body">
-              <p class="SectionFont">name<p>
-              <p>{{category}}</p>
-              <p>Offers In-App Purchases</p>
-<br>
-<br>
-
-</div>
-          <!-- Selection options -->
-
-              <nav class="title">
-                <div class="segmented-control" style="margin-left: 3em; margin-right: 3em;">
-                  <a class="control-item active" href="#item1mobile">Details</a>
-                  <a class="control-item" href="#item2mobile">Reviews</a>
-                  <a class="control-item" href="#item3mobile">Related</a>
-
-              </nav>
-
-            <br>
+                <p class="SectionFont">{{name}}<p>
+                <p>{{category}}</p>
+                <p>{{downloads}}</p>
+                <p>{{ratings}}</p>
+                <p>{{ratings_count}}</p>
+                <p>Offers In-App Purchases</p>
+                <br>
+                <br>
+            </div>
+                
+            
+            <nav class="title">
+                <a class="control-item active" href="#item1mobile">Details</a>
+                <a class="control-item" href="#item2mobile">Reviews</a>
+                <a class="control-item" href="#item3mobile">Related</a>
+            </nav>
+            
         </li>
-
         <li class="table-view-cell media category_size">
             <div class="media-body">
               <p class="SectionFont">iPhone</p>
@@ -189,8 +191,7 @@
               <p>Updated<span class="InfoSpan">May 3, 2017</span></p>
               <p>Version<span class="InfoSpan">1.0.0</span></p>
               <p>Size<span class="InfoSpan">26.8 MB</span></p>
-              <p><span class="InfoSpan">Infrequent/Mild Mature/Suggestive Themes</span></p>
-              <p>Family Sharing<span class="InfoSpan">Yes</span></p>
+              <p>Family Sharing<span class="InfoSpan">Infrequent/Mild Mature/Suggestive Themes</span></p>
               <p>Combatibility<span class="InfoSpan">Requires iOS 9.0 or later. Compatible with iPhone, iPad, and iPod touch</span></p>
               <p>Languages<span class="InfoSpan">English</span></p>
             </div>
@@ -237,7 +238,8 @@
             <hr style="height:1em; visibility:hidden;" />
         </li>
       </ul>
-  </div>
+    </div>
+      
     <!-- /.content -->
     <!-- /.modal -->
     <nav class="bar bar-tab">

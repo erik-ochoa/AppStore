@@ -104,14 +104,18 @@ def apppage():
     print(name)
     print(category)
 
-    #cursor.execute("SELECT downloads FROM applications WHERE name=%s AND #category_name=%s",(name, category))
-    downloads = 512
-    ratings = 4123
-    ratings_count = 1231
-    version = 0
-    images = 'noimage'
+    cursor.execute("SELECT downloads FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    downloads = cursor.fetchone()[0]
+    cursor.execute("SELECT ratings FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    ratings = str(int(cursor.fetchone()[0]*20))
+    cursor.execute("SELECT ratings_count FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    ratings_count = cursor.fetchone()[0]
+    cursor.execute("SELECT image_link FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    image_link = cursor.fetchone()[0]
 
-    return render_template("apppage.html", name = name, category = category, ratings = ratings, ratings_count = ratings_count, version = version, images = images)
+    version = 0
+
+    return render_template("apppage.html", name = name, category = category, downloads = downloads, ratings = ratings, ratings_count = ratings_count, version = version, image_link = image_link)
 
 if __name__ == "__main__":
     app.run()
