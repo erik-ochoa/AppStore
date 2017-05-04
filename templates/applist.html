@@ -129,9 +129,13 @@
         width: 60px;
         height: 60px;
       }
-      .downloads {
-          color = #FFD700;  
+      .downloads_count {
+          color: #628bff;  
+          font-weight: 200;
       }
+        .downloads_span {
+ 
+        }
     </style>
   </head>
 <!-- body -->
@@ -173,7 +177,7 @@
             <div class="media-body">
               {{names[0]}}
               <p>{{category}}</p>
-              <p class="downloads" style="display:none">Downloads ({{downloads[0]}})</p>
+              <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[0]}}</span>)</p>
               <div class="ratings" style="display:none"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings[0]}}">★★★★★</span><span class="smallFont">({{ratings_count[0]}})</span></div>
             </div>
           </a>
@@ -188,7 +192,7 @@
             <div class="media-body">
               {{names[1]}}
               <p>{{category}}</p>
-              <p class="downloads" style="display:none">Downloads ({{downloads[1]}})</p>
+              <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[1]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings[1]}}">★★★★★</span><span class="smallFont">({{ratings_count[1]}})</span></div>
             </div>
           </a>
@@ -203,7 +207,7 @@
             <div class="media-body">
               {{names[2]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[2]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[2]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings[2]}}">★★★★★</span><span class="smallFont">({{ratings_count[2]}})</span></div>
             </div>
           </a>
@@ -218,7 +222,7 @@
             <div class="media-body">
               {{names[3]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[3]}})</p>
+                <p class="downloads" style="display:none"> <span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[3]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings[3]}}">★★★★★</span><span class="smallFont">({{ratings_count[3]}})</span></div>
             </div>
           </a>
@@ -233,7 +237,7 @@
             <div class="media-body">
               {{names[4]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[4]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[4]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings[4]}}">★★★★★</span><span class="smallFont">({{ratings_count[4]}})</span></div>
             </div>
           </a>
@@ -248,7 +252,7 @@
             <div class="media-body">
               {{names[5]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[5]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[5]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container {{ratings[5]}}">★★★★★</span><span class="smallFont">({{ratings_count[5]}})</span></div>
             </div>
           </a>
@@ -263,7 +267,7 @@
             <div class="media-body">
               {{names[6]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[6]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[6]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container {{ratings[6]}}">★★★★★</span><span class="smallFont">({{ratings_count[6]}})</span></div>
             </div>
           </a>
@@ -278,7 +282,7 @@
             <div class="media-body">
               {{names[7]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[7]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[7]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container {{ratings[7]}}">★★★★★</span><span class="smallFont">({{ratings_count[7]}})</span></div>
             </div>
           </a>
@@ -293,7 +297,7 @@
             <div class="media-body">
               {{names[8]}}
               <p>{{category}}</p>
-                <p class="downloads" style="display:none">Downloads ({{downloads[8]}})</p>
+                <p class="downloads" style="display:none"><span class="downloads_span">Downloads</span> (<span class="downloads_count">{{downloads[8]}}</span>)</p>
               <div class="ratings" style="display:none;"><span style="top: -.3em; left: -.04em;" class="stars-container {{ratings[8]}}">★★★★★</span><span class="smallFont">({{ratings_count[8]}})</span></div>
             </div>
           </a>
