@@ -25,7 +25,7 @@
                 $(".downloads").show(); 
             }
         });
-      function setCategory(category, name) { 
+      function setVars(category, name) { 
         document.getElementById('getcategory').value = category;
         document.getElementById('getname').value = name;
         document.forms['send_form'].submit();
@@ -152,11 +152,11 @@
 <!-- Paid -->
     <form action="/apppage/" method="POST" id="send_form" >  
     <div class="content">
-      <hr style="height:15px; visibility:hidden;" />
+      <hr style="height:3.3em; visibility:hidden;" />
         
 <!-- Free -->
       <ul id="item2mobile" class="table-view control-content active">
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('work', 'work2')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -293,7 +293,7 @@
         </li>
           <input type="text" style="display:none" id="getversion" name="getversion" value="default">
           <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
-          <input type="text" class="hidden_input" id="getname" name="getcategory" value="default">
+          <input type="text" class="hidden_input" id="getname" name="getname" value="default">
         <br>
 
       </ul>

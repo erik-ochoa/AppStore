@@ -55,10 +55,10 @@
       <form action="/applist/" method="POST" id="send_form" >
         <br>
         <ul class="table-view">
-          <li class="table-view-cell media category_size">
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[0]}}')">
             <a class="navigate-right" href="nolink" data-transition="slide-in">
               <img class="media-object pull-left icon_size" src="{{images[0]}}">
-              <div class="media-body" onClick="setCategory('{{categories[0]}}')">
+              <div class="media-body" >
                 <p class="name_position">{{categories[0]}}</p>
               </div>
             </a>
