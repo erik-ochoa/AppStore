@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>App List</title>
-    <!--Making the page feel more natural on mobile devices -->  
+    <!--Making the page feel more natural on mobile devices -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!--Linking ratchet framework --> 
+    <!--Linking ratchet framework -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
     <!-- our css file -->
@@ -83,14 +83,14 @@
       }
       .segmented-control .control-item.active{
       color: #fff;
-      background-color: #2587f2 !important;
+      background-color: #979ba0 !important;
       }
       .segmented-control {
       background-color: transparent;
-      border: 1px solid #2587f2 !important;
+      border: 1px solid #979ba0 !important;
       }
       .segmented-control .control-item {
-      color: #2587f2;
+      color: #979ba0;
       border-color: #929292;
       -webkit-transition: background-color .1s linear;
       -moz-transition: background-color .1s linear;
@@ -106,6 +106,16 @@
       .app_image_size {
         width: 100px;
         height: 100px;
+      }
+
+      .SectionFont{
+        font-size: 1em;
+        color: black;
+      }
+
+      .InfoSpan{
+        padding-left:3em;
+        color:black;
       }
     </style>
   </head>
@@ -130,38 +140,101 @@
 
             <img class="media-object pull-left app_image_size" src="https://lh3.googleusercontent.com/vIJ7bv0rBwc3IdHaocUXloyLhJR6_vGhpwQGpXMR3ZD8dK_OnXpzPgb2FSpXnol-QipG=w300">
             <div class="media-body">
-              name
+              <p class="SectionFont">name<p>
               <p>{{category}}</p>
               <p>Offers In-App Purchases</p>
 <br>
 <br>
 
+</div>
           <!-- Selection options -->
-            <div class="media-body">
+
               <nav class="title">
-                <div class="segmented-control">
-                  <a class="control-item" href="#item1mobile">Details</a>
-                  <a class="control-item active" href="#item2mobile">Reviews</a>
+                <div class="segmented-control" style="margin-left: 3em; margin-right: 3em;">
+                  <a class="control-item active" href="#item1mobile">Details</a>
+                  <a class="control-item" href="#item2mobile">Reviews</a>
                   <a class="control-item" href="#item3mobile">Related</a>
-                </div>
+
               </nav>
-            </div>
+
+            <br>
         </li>
-        
+
         <li class="table-view-cell media category_size">
             <div class="media-body">
+              <p class="SectionFont">iPhone</p>
+              <hr style="height:7em; visibility:hidden;" />
+              <p>Insert Images Here</p>
               <hr style="height:7em; visibility:hidden;" />
             </div>
         </li>
         <li class="table-view-cell media category_size">
             <div class="media-body">
-              <hr style="height:7em; visibility:hidden;" />
+              <p class="SectionFont">Description</p>
+              <p>This is where the description of the app will go. Fill this in with the description, this is for testing purposes.</p>
             </div>
         </li>
         <li class="table-view-cell media category_size">
             <div class="media-body">
-              <hr style="height:7em; visibility:hidden;" />
+              <p class="SectionFont">What's New</p>
+              <p>May 3, 2017<p>
+              <p>This is where you would put your newest updates! Add things here! What's new?</p>
             </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p class="SectionFont">Information</p>
+              <p>Seller<span class="InfoSpan">Selly Seller Company</span></p>
+              <p>Category<span class="InfoSpan">Finance</span></p>
+              <p>Updated<span class="InfoSpan">May 3, 2017</span></p>
+              <p>Version<span class="InfoSpan">1.0.0</span></p>
+              <p>Size<span class="InfoSpan">26.8 MB</span></p>
+              <p><span class="InfoSpan">Infrequent/Mild Mature/Suggestive Themes</span></p>
+              <p>Family Sharing<span class="InfoSpan">Yes</span></p>
+              <p>Combatibility<span class="InfoSpan">Requires iOS 9.0 or later. Compatible with iPhone, iPad, and iPod touch</span></p>
+              <p>Languages<span class="InfoSpan">English</span></p>
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+          <a class="navigate-right" href="nolink" data-transition="slide-in">
+            <div class="media-body">
+              <p class="SectionFont">Top In-App Purchases</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media category_size">
+          <a class="navigate-right" href="nolink" data-transition="slide-in">
+            <div class="media-body">
+              <p class="SectionFont">Version History</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media category_size">
+          <a class="navigate-right" href="nolink" data-transition="slide-in">
+            <div class="media-body">
+              <p class="SectionFont">Developer Website</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media category_size">
+          <a class="navigate-right" href="nolink" data-transition="slide-in">
+            <div class="media-body">
+              <p class="SectionFont">Privacy Policy</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media category_size">
+          <a class="navigate-right" href="nolink" data-transition="slide-in">
+            <div class="media-body">
+              <p class="SectionFont">Developer Apps</p>
+            </div>
+          </a>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p> © Selly Seller Company</p>
+            </div>
+            <hr style="height:1em; visibility:hidden;" />
         </li>
       </ul>
   </div>
