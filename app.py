@@ -26,7 +26,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = '1998compsci'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'jack8998'
 app.config['MYSQL_DATABASE_DB'] = 'appstore_db'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -103,14 +103,14 @@ def apppage():
     category = request.form['getcategory']
     print(name)
     print(category)
-   
+
     #cursor.execute("SELECT downloads FROM applications WHERE name=%s AND #category_name=%s",(name, category))
     downloads = 512
     ratings = 4123
     ratings_count = 1231
     version = 0
     images = 'noimage'
-    
+
     return render_template("apppage.html", name = name, category = category, ratings = ratings, ratings_count = ratings_count, version = version, images = images)
 
 if __name__ == "__main__":

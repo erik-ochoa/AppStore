@@ -17,19 +17,19 @@
     <!--Jquery-->
     <script>
        $(document).ready(function () {
-             
+
             if ({{version}} == 1) {
-                $(".ratings").show(); 
+                $(".ratings").show();
             }
            if ({{version}} == 0) {
-                $(".downloads").show(); 
+                $(".downloads").show();
             }
         });
-      function setVars(category, name) { 
+      function setVars(category, name) {
         document.getElementById('getcategory').value = category;
         document.getElementById('getname').value = name;
         document.forms['send_form'].submit();
-      } 
+      }
     </script>
     <style>
       body { font-size: 18px; }
@@ -63,7 +63,7 @@
         .stars-{{ratings[7]}}:after { width: {{ratings[7]}}%; }
         .stars-{{ratings[8]}}:after { width: {{ratings[8]}}%; }
         .stars-{{ratings[9]}}:after { width: {{ratings[9]}}%; }
-        
+
       p {
       font-size : 12px;
       background-color : transparents;
@@ -120,14 +120,14 @@
       margin-left: 3em;
       margin-right: 3em;
       }
-        
+
       .app_image_size {
         width: 60px;
         height: 60px;
       }
     </style>
   </head>
-    
+
   <body>
     <header style="height: 78px" class="bar bar-nav">
       <a href="/"  data-transition="slide-out">
@@ -148,12 +148,12 @@
       </nav>
       <br>
     </header>
-      
+
 <!-- Paid -->
-    <form action="/apppage/" method="POST" id="send_form" >  
+    <form action="/apppage/" method="POST" id="send_form" >
     <div class="content">
       <hr style="height:3.3em; visibility:hidden;" />
-        
+
 <!-- Free -->
       <ul id="item2mobile" class="table-view control-content active">
         <li class="table-view-cell get-fix media" onClick="setVars('work', 'work2')">
@@ -295,13 +295,40 @@
           <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
           <input type="text" class="hidden_input" id="getname" name="getname" value="default">
         <br>
+        <br>
+        <br>
 
       </ul>
-        
+
 <!--Top Grossing -->
 
     </div>
-      
+
+    <!-- Settings modal -->
+     <div id="settingsModal" class="modal">
+       <header class="bar bar-nav">
+         <a style="color:gray; top:.5em; position:absolute;" class="pull-left">Edit</p>
+         <a class="icon icon-close pull-right" href="#settingsModal"></a>
+         <h1 class="title">Wish List</h1>
+       </header>
+
+       <div class="content">
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+         <h3 style="text-align: center; font-weight:normal;">Wish List</h5>
+
+
+   <p style="text-align: center">You don't currently have anything in your Wish List.</p>
+
+
+       </div>
+     </div><!-- /.modal -->
+
 <!-- /.modal -->
     <nav class="bar bar-tab">
       <a class="tab-item active" href="#">
