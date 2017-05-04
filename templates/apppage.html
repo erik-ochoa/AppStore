@@ -19,9 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--javaScript-->
     <script>
-     
+
     </script>
-      
+
     <style>
       body { font-size: 18px; }
       .stars-container {
@@ -45,7 +45,7 @@
       overflow: hidden;
       }
       .stars-{{ratings[0]}}:after { width: {{ratings[0]}}%; }
-        
+
       p {
       font-size : 12px;
       background-color : transparents;
@@ -102,15 +102,15 @@
       margin-left: 3em;
       margin-right: 3em;
       }
-        
+
       .app_image_size {
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
       }
     </style>
   </head>
   <body>
-    <header style="height: 78px" class="bar bar-nav">
+    <header class="bar bar-nav">
       <a href="/"  data-transition="slide-out">
       <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
       <span class="icon icon-left-nav"></span>
@@ -119,17 +119,52 @@
       </a>
       <a class="icon icon-list pull-right" href="#settingsModal"></a>
       <h1 class="title">{{category}}</h1>
-      <hr style="height:15px; visibility:hidden;" />
-      <nav class="title">
-        <div class="segmented-control">
-          <a class="control-item" href="#item1mobile">Paid</a>
-          <a class="control-item active" href="#item2mobile">Free</a>
-          <a class="control-item" href="#item3mobile">Top Grossing</a>
-        </div>
-      </nav>
-      <br>
+
     </header>
 
+  <div class="content">
+
+<ul class="table-view">
+        <li class="table-view-cell media category_size">
+
+
+            <img class="media-object pull-left app_image_size" src="https://lh3.googleusercontent.com/vIJ7bv0rBwc3IdHaocUXloyLhJR6_vGhpwQGpXMR3ZD8dK_OnXpzPgb2FSpXnol-QipG=w300">
+            <div class="media-body">
+              name
+              <p>{{category}}</p>
+              <p>Offers In-App Purchases</p>
+<br>
+<br>
+
+          <!-- Selection options -->
+            <div class="media-body">
+              <nav class="title">
+                <div class="segmented-control">
+                  <a class="control-item" href="#item1mobile">Details</a>
+                  <a class="control-item active" href="#item2mobile">Reviews</a>
+                  <a class="control-item" href="#item3mobile">Related</a>
+                </div>
+              </nav>
+            </div>
+        </li>
+        
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <hr style="height:7em; visibility:hidden;" />
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <hr style="height:7em; visibility:hidden;" />
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <hr style="height:7em; visibility:hidden;" />
+            </div>
+        </li>
+      </ul>
+  </div>
     <!-- /.content -->
     <!-- /.modal -->
     <nav class="bar bar-tab">
