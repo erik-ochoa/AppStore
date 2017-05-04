@@ -10,14 +10,12 @@
     <!--Linking ratchet framework --> 
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
-    <!-- our css file -->
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
-    <!-- ratchet framework javaScript -->
+    <!-- Our CSS file -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+    <!-- Ratchet javaScript -->
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
-      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- javaScript --> 
+<!-- javaScript -->
     <script>
       function setCategory(category) {
         document.getElementById('getcategory').value = category;
@@ -38,7 +36,6 @@
       }
     </style>
   </head>
-<!-- body -->  
   <body>
     <header class="bar bar-nav">
       <!-- <a href="/"  data-transition="slide-out">
@@ -57,7 +54,6 @@
         </div>
         </div> -->
     </header>
-
     <div class="content">
       <form action="/applist/" method="POST" id="send_form" >
         <ul class="table-view">
@@ -147,11 +143,9 @@
               </div>
           </li>
         </ul>
-          
+
         <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
       </form>
-
-    <!-- /.content -->
     </div>
   </body>
 </html>

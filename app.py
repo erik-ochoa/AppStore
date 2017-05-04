@@ -26,7 +26,7 @@ toolbar = DebugToolbarExtension(app)
 
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'jack8998'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'jac8998'
 app.config['MYSQL_DATABASE_DB'] = 'appstore_db'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
