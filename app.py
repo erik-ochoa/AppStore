@@ -6,7 +6,7 @@ Created on Feb 16, 2017
 
 from flask import Flask, render_template, request, session
 from flaskext.mysql import MySQL
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 from flask_sqlalchemy import SQLAlchemy
 
 mysql = MySQL()
@@ -20,9 +20,9 @@ app = Flask(__name__)
 #     id = db.Column('id_ApplicationStore', db.Integer, primary_key=True)
 #     name_ApplicationStore = db.Column('name_ApplicationStore', db.Unicode)
 
-app.debug = True
-app.config['SECRET_KEY'] = 'secretkey'
-toolbar = DebugToolbarExtension(app)
+#app.debug = True
+#app.config['SECRET_KEY'] = 'secretkey'
+#toolbar = DebugToolbarExtension(app)
 
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
@@ -88,9 +88,9 @@ def applist():
         i = i+1
 
     #uncomment below to display download count
-    version = 0
+    #version = 0
     #uncomment below to display ratings
-    #version = 1
+    version = 1
 
     return render_template("applist.html", category=category, version = version, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
     #return current_app.send_static_file('applist.html')
@@ -99,6 +99,7 @@ def applist():
 def apppage():
     conn = mysql.connect()
     cursor = conn.cursor()
+    version = request.form['getversion']
     name = request.form['getname']
     category = request.form['getcategory']
     print(name)

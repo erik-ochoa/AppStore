@@ -19,7 +19,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!--javaScript-->
     <script>
+         $(document).ready(function () {
 
+            if ({{version}} == 1) {
+                $("#ratings").show();
+            }
+           if ({{version}} == 0) {
+                $("#downloads").show();
+            }
+        });
     </script>
 
     <style>
@@ -44,7 +52,7 @@
       color: gold;
       overflow: hidden;
       }
-      .stars-{{ratings[0]}}:after { width: {{ratings[0]}}%; }
+      .stars-{{ratings}}:after { width: {{ratings}}%; }
 
       p {
       font-size : 12px;
@@ -118,12 +126,14 @@
         color:black;
         position: fixed;
         left: 100px;
-      }
-      #moveup {
-        position: fixed;
-        top: 100px;
-            
-      }
+        }
+        .details_image {
+            height: 510px;
+            width: 285px;
+        }
+        .center_image {
+            margin-left: 40px;
+        }
     </style>
   </head>
   <body>
@@ -146,28 +156,47 @@
             <div class="media-body">
                 <p class="SectionFont">{{name}}<p>
                 <p>{{category}}</p>
-                <p>{{downloads}}</p>
-                <p>{{ratings}}</p>
-                <p>{{ratings_count}}</p>
-                <p>Offers In-App Purchases</p>
-                <br>
-                <br>
+                <p>Downalods ({{downloads}})</p>   
+               
+              <div class="ratings" style="display:yes"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings}}">★★★★★</span><span class="smallFont">({{ratings_count}})</span>
+                </div>
             </div>
-                
-            
+                <p>Offers In-App Purchases</p>
+
+             <br>    
             <nav class="title">
+              <div class="segmented-control" style="margin-left: 3.2em; margin-right: 3.2em;">
                 <a class="control-item active" href="#item1mobile">Details</a>
                 <a class="control-item" href="#item2mobile">Reviews</a>
                 <a class="control-item" href="#item3mobile">Related</a>
+              </div>
             </nav>
+            <br>                
+             <br>    
             
         </li>
         <li class="table-view-cell media category_size">
             <div class="media-body">
               <p class="SectionFont">iPhone</p>
-              <hr style="height:7em; visibility:hidden;" />
-              <p>Insert Images Here</p>
-              <hr style="height:7em; visibility:hidden;" />
+              <hr style="height:0.6em; visibility:hidden;" />
+               <div class="slider center_image" id="mySlider">
+                  <div class="slide-group">
+                    <div class="slide">
+                      <img src="https://lh3.googleusercontent.com/3mjf2hlik_oMkmuR0MNg2H1zBCkUiswj1Jm9Wq9Sq5ocpIdyxKfs9emnzSoqp-yFVCey=h900-rw" class="details_image">
+                      <span class="slide-text">
+                        <span class="icon icon-left-nav"></span>
+                        Slide me
+                      </span>
+                    </div>
+                    <div class="slide">
+                      <img src="https://lh3.googleusercontent.com/ucXfulpT5JSwxYCxZcegL1qjxXcR1rhH248lH45U8ajm959stJJCLm2ivlq0fHQsAohw=h900-rw" class="details_image">
+                    </div>
+                    <div class="slide">
+                      <img src="https://lh3.googleusercontent.com/4vMbBDHLmK4xwWbIhonzeISuY88XNTNT5a6mVpVWkzghEtyf7MMRoY1lXc7rkFQYH_w=h900-rw" class="details_image">
+                    </div>
+                  </div>
+                </div>
+              <hr style="height:0.6em; visibility:hidden;" />
             </div>
         </li>
         <li class="table-view-cell media category_size">
@@ -192,7 +221,7 @@
               <p>Version<span class="InfoSpan">1.0.0</span></p>
               <p>Size<span class="InfoSpan">26.8 MB</span></p>
               <p>Family Sharing<span class="InfoSpan">Infrequent/Mild Mature/Suggestive Themes</span></p>
-              <p>Combatibility<span class="InfoSpan">Requires iOS 9.0 or later. Compatible with iPhone, iPad, and iPod touch</span></p>
+              <p>Combatibility<span class="InfoSpan">Requires iOS 8 or later</span></p>
               <p>Languages<span class="InfoSpan">English</span></p>
             </div>
         </li>
