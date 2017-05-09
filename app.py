@@ -102,8 +102,6 @@ def apppage():
     version = request.form['getversion']
     name = request.form['getname']
     category = request.form['getcategory']
-    print(name)
-    print(category)
 
     cursor.execute("SELECT downloads FROM applications WHERE name=%s AND category_name=%s",(name, category))
     downloads = cursor.fetchone()[0]
@@ -113,10 +111,29 @@ def apppage():
     ratings_count = cursor.fetchone()[0]
     cursor.execute("SELECT image_link FROM applications WHERE name=%s AND category_name=%s",(name, category))
     image_link = cursor.fetchone()[0]
+    
+    cursor.execute("SELECT details_image FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    details_image = cursor.fetchone()[0]
+    cursor.execute("SELECT description FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    description = cursor.fetchone()[0]
+    cursor.execute("SELECT seller FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    seller = cursor.fetchone()[0]
+    cursor.execute("SELECT updated FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    updated = cursor.fetchone()[0]
+    cursor.execute("SELECT version FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    version = cursor.fetchone()[0]
+    cursor.execute("SELECT size FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    size = cursor.fetchone()[0]
+    cursor.execute("SELECT family_sharing FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    family_sharing = cursor.fetchone()[0]
+    cursor.execute("SELECT compatibility FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    compatibility = cursor.fetchone()[0]
+    cursor.execute("SELECT languages FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    languages = cursor.fetchone()[0]
+    cursor.execute("SELECT privacy FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    privacy = cursor.fetchone()[0]
 
-    version = 0
-
-    return render_template("apppage.html", name = name, category = category, downloads = downloads, ratings = ratings, ratings_count = ratings_count, version = version, image_link = image_link)
+    return render_template("apppage.html", name = name, category = category, downloads = downloads, ratings = ratings, ratings_count = ratings_count, image_link = image_link, details_image = details_image, description = description, seller = seller, updated = updated, version = version, size = size, family_sharing = family_sharing, compatibility = compatibility, languages = languages, privacy = privacy)
 
 if __name__ == "__main__":
     app.run()
