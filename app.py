@@ -44,8 +44,8 @@ def main():
     #Assigning every category to an index c_list and image link to img_link
     categories= []
     images = []
-    i = 0
-    while i < 10:
+    i = 11
+    while i < 21:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         categories.append(cursor.fetchone()[0])
 
@@ -67,12 +67,12 @@ def applist():
     downloads = []
     ratings = []
     ratings_count = []
-    i = 0
-    while i < 10:
+    i = 1
+    while i < 9:
         cursor.execute("SELECT name FROM applications WHERE id=%s AND category_name=%s",(i, category))
         names.append(cursor.fetchone()[0])
 
-        cursor.execute("SELECT image_link FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        cursor.execute("SELECT image_link FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         #uncommend below to display images
         images.append(cursor.fetchone()[0])
         #uncomment below to get rid of images
