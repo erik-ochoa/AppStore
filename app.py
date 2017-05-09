@@ -69,7 +69,7 @@ def applist():
     ratings_count = []
     i = 1
     while i < 9:
-        cursor.execute("SELECT name FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        cursor.execute("SELECT name FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         names.append(cursor.fetchone()[0])
 
         cursor.execute("SELECT image_link FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
@@ -78,11 +78,11 @@ def applist():
         #uncomment below to get rid of images
         #image_list.append('noimage')
 
-        cursor.execute("SELECT downloads FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        cursor.execute("SELECT downloads FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         downloads.append(cursor.fetchone()[0])
-        cursor.execute("SELECT ratings_count FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        cursor.execute("SELECT ratings_count FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         ratings_count.append(str(cursor.fetchone()[0]))
-        cursor.execute("SELECT ratings FROM applications WHERE id=%s AND category_name=%s",(i, category))
+        cursor.execute("SELECT ratings FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         ratings.append(str(int(cursor.fetchone()[0]*20)))
 
         i = i+1
