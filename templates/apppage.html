@@ -179,23 +179,7 @@
             <div class="media-body">
               <p class="SectionFont">iPhone</p>
               <hr style="height:0.6em; visibility:hidden;" />
-               <div class="slider center_image" id="mySlider">
-                  <div class="slide-group">
-                    <div class="slide">
-                      <img src="https://lh3.googleusercontent.com/3mjf2hlik_oMkmuR0MNg2H1zBCkUiswj1Jm9Wq9Sq5ocpIdyxKfs9emnzSoqp-yFVCey=h900-rw" class="details_image">
-                      <span class="slide-text">
-                        <span class="icon icon-left-nav"></span>
-                        Slide me
-                      </span>
-                    </div>
-                    <div class="slide">
-                      <img src="https://lh3.googleusercontent.com/ucXfulpT5JSwxYCxZcegL1qjxXcR1rhH248lH45U8ajm959stJJCLm2ivlq0fHQsAohw=h900-rw" class="details_image">
-                    </div>
-                    <div class="slide">
-                      <img src="https://lh3.googleusercontent.com/4vMbBDHLmK4xwWbIhonzeISuY88XNTNT5a6mVpVWkzghEtyf7MMRoY1lXc7rkFQYH_w=h900-rw" class="details_image">
-                    </div>
-                  </div>
-                </div>
+                      <img style="height: 460px; width: 240px; margin-left: 25px;" src="https://lh3.googleusercontent.com/3mjf2hlik_oMkmuR0MNg2H1zBCkUiswj1Jm9Wq9Sq5ocpIdyxKfs9emnzSoqp-yFVCey=h900-rw" class="details_image">
               <hr style="height:0.6em; visibility:hidden;" />
             </div>
         </li>
@@ -204,59 +188,25 @@
               <p class="SectionFont">Description</p>
               <p>This is where the description of the app will go. Fill this in with the description, this is for testing purposes.</p>
             </div>
-        </li>
-        <li class="table-view-cell media category_size">
-            <div class="media-body">
-              <p class="SectionFont">What's New</p>
-              <p>May 3, 2017<p>
-              <p>This is where you would put your newest updates! Add things here! What's new?</p>
-            </div>
-        </li>
+          </li>
         <li class="table-view-cell media category_size">
             <div class="media-body">
               <p class="SectionFont">Information</p>
-              <p>Seller<span class="InfoSpan">Selly Seller Company</span></p>
-              <p>Category<span class="InfoSpan">Finance</span></p>
-              <p>Updated<span class="InfoSpan">May 3, 2017</span></p>
-              <p>Version<span class="InfoSpan">1.0.0</span></p>
-              <p>Size<span class="InfoSpan">26.8 MB</span></p>
-              <p>Family Sharing<span class="InfoSpan">Infrequent/Mild Mature/Suggestive Themes</span></p>
-              <p>Combatibility<span class="InfoSpan">Requires iOS 8 or later</span></p>
-              <p>Languages<span class="InfoSpan">English</span></p>
+              <p>Seller<span class="InfoSpan">{{seller}}</span></p>
+              <p>Category<span class="InfoSpan">{{category}}</span></p>
+              <p>Updated<span class="InfoSpan">{{updated}}</span></p>
+              <p>Version<span class="InfoSpan">{{version}}</span></p>
+              <p>Size<span class="InfoSpan">{{size}}</span></p>
+              <p>Family Sharing<span class="InfoSpan">{{family_sharing}}</span></p>
+              <p>Combatibility<span class="InfoSpan">{{compatible}}</span></p>
+              <p>Languages<span class="InfoSpan">{{languages}}</span></p>
             </div>
-        </li>
-        <li class="table-view-cell media category_size">
-          <a class="navigate-right" href="nolink" data-transition="slide-in">
-            <div class="media-body">
-              <p class="SectionFont">Top In-App Purchases</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media category_size">
-          <a class="navigate-right" href="nolink" data-transition="slide-in">
-            <div class="media-body">
-              <p class="SectionFont">Version History</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media category_size">
-          <a class="navigate-right" href="nolink" data-transition="slide-in">
-            <div class="media-body">
-              <p class="SectionFont">Developer Website</p>
-            </div>
-          </a>
         </li>
         <li class="table-view-cell media category_size">
           <a class="navigate-right" href="nolink" data-transition="slide-in">
             <div class="media-body">
               <p class="SectionFont">Privacy Policy</p>
-            </div>
-          </a>
-        </li>
-        <li class="table-view-cell media category_size">
-          <a class="navigate-right" href="nolink" data-transition="slide-in">
-            <div class="media-body">
-              <p class="SectionFont">Developer Apps</p>
+               <p class="SectionFont">{{privacy}}</p>
             </div>
           </a>
         </li>
