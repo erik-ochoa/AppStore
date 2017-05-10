@@ -129,6 +129,11 @@
         width: 60px;
         height: 60px;
       }
+               body:-webkit-scrollbar { 
+  /* This is the magic bit */
+            display: none;
+    overflow:hidden;
+}
     </style>
   </head>
 <!-- body -->
@@ -175,7 +180,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[1]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -190,7 +195,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[2]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -205,7 +210,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[3]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -220,7 +225,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[4]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -235,7 +240,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[5]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>
@@ -250,7 +255,7 @@
             </div>
           </a>
         </li>
-        <li class="table-view-cell get-fix media">
+        <li class="table-view-cell get-fix media" onClick="setVars('{{category}}', '{{names[6]}}')">
           <a href="choose-theater.html" data-transition="slide-in">
             <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
             <span style="float: right; padding-top:1em; padding-bottom:1em;" class="smallUnderText">In-App</span>

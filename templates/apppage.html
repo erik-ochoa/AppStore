@@ -134,6 +134,15 @@
         .center_image {
             margin-left: 40px;
         }
+        .header_shade {
+            background-color: #979ba0;
+            border-color: black;
+        }
+              body:-webkit-scrollbar { 
+  /* This is the magic bit */
+            display: none;
+    overflow:hidden;
+}
     </style>
   </head>
   <body>
@@ -156,7 +165,7 @@
             <div class="media-body">
                 <p class="SectionFont">{{name}}<p>
                 <p>{{category}}</p>
-                <p>Downlaods ({{downloads}})</p>
+                <!--<p>Downlaods ({{downloads}})</p>-->
                 <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
 
               <div class="ratings" style="display:yes"><span style="top: -.3em; left: -.04em;" class="stars-container stars-{{ratings}}">★★★★★</span><span class="smallFont">({{ratings_count}})</span>
@@ -167,9 +176,9 @@
              <br>
             <nav class="title">
               <div class="segmented-control" style="margin-left: 3.2em; margin-right: 3.2em;">
-                <a class="control-item active" href="#item1mobile">Details</a>
-                <a class="control-item" href="#item2mobile">Reviews</a>
-                <a class="control-item" href="#item3mobile">Related</a>
+                <a class="control-item active" style="border-color: black;" href="#item1mobile">Details</a>
+                <a class="control-item header_shade" href="#item2mobile">Reviews</a>
+                <a class="control-item header_shade" href="#item3mobile">Related</a>
               </div>
             </nav>
             <br>
@@ -204,12 +213,10 @@
             </div>
         </li>
         <li class="table-view-cell media category_size">
-          <a class="navigate-right" href="nolink" data-transition="slide-in">
             <div class="media-body">
               <p class="SectionFont">Privacy Policy</p>
                <p>{{privacy}}</p>
             </div>
-          </a>
         </li>
         <li class="table-view-cell media category_size">
             <div class="media-body">

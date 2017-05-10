@@ -1,7 +1,7 @@
 '''
 Created on Feb 16, 2017
 
-@author: Kyle and Erik
+@authors: Kyle and Erik
 '''
 
 from flask import Flask, render_template, request, session
@@ -45,7 +45,8 @@ def main():
     categories= []
     images = []
     i = 11
-    while i < 21:
+    j = 20
+    while i <= j:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         categories.append(cursor.fetchone()[0])
 
@@ -68,7 +69,8 @@ def applist():
     ratings = []
     ratings_count = []
     i = 1
-    while i < 9:
+    j = 9
+    while i < j:
         cursor.execute("SELECT name FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         names.append(cursor.fetchone()[0])
 
@@ -110,8 +112,7 @@ def apppage():
     cursor.execute("SELECT ratings_count FROM applications WHERE name=%s AND category_name=%s",(name, category))
     ratings_count = cursor.fetchone()[0]
     cursor.execute("SELECT image_link FROM applications WHERE name=%s AND category_name=%s",(name, category))
-    image_link = cursor.fetchone()[0]
-    
+    image_link = cursor.fetchone()[0] 
     cursor.execute("SELECT details_image FROM applications WHERE name=%s AND category_name=%s",(name, category))
     details_image = cursor.fetchone()[0]
     cursor.execute("SELECT description FROM applications WHERE name=%s AND category_name=%s",(name, category))
