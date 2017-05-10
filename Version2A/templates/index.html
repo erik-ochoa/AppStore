@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AppGen</title>
+    <!--Making the page feel more natural on mobile devices -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--Linking ratchet framework -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
+    <!-- our css file -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+    <!-- ratchet framework javaScript -->
+    <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- javaScript -->
+    <script>
+      function setCategory(category) {
+        document.getElementById('getcategory').value = category;
+        document.forms['send_form'].submit();
+      }
+    </script>
+<!-- CSS -->
+    <style>
+      .category_size {
+      padding-top: 8px !important;
+      padding-bottom: 8px !important;
+      }
+      .name_position {
+      padding-top: 0.5em;
+      }
+      .hidden_input {
+      display: none;
+      }
+    .icon_size {
+    width: 40px;
+    height: 40px;
+}
+        body:-webkit-scrollbar { 
+  /* This is the magic bit */
+            display: none;
+    overflow:hidden;
+}
+
+    </style>
+  </head>
+<!-- body -->
+  <body>
+    <header class="bar bar-nav">
+      <!-- <a href="/"  data-transition="slide-out">
+        <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
+          <span class="icon icon-left-nav"></span>
+          Back
+
+        </button>
+          </a> -->
+      <h1 class="title" id="testclick">Categories</h1>
+      <!-- Progress Bar -->
+      <!-- <div class="containerlower">
+        <div class="progress">
+          <div class="progress-bar">
+          </div>
+        </div>
+        </div> -->
+    </header>
+
+    <div class="content">
+      <form action="/applist/" method="POST" id="send_form" >
+        <ul class="table-view">
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[0]}}')">
+            <a class="navigate-right" href="nolink" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[0]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[0]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[1]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[1]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[1]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[2]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[2]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[2]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size"  onClick="setCategory('{{categories[3]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[3]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[3]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[4]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[4]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[4]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[5]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[5]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[5]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" id="book_container" onClick="setCategory('{{categories[6]}}')">
+            <a class="navigate-right" id="send_book" href="nolink" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[6]}}" alt="Book icon">
+              <div class="media-body">
+                <p class="name_position">{{categories[6]}} </p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[7]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[7]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[7]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[8]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[8]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[8]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[9]}}')">
+            <a class="navigate-right" href="choose-theater.html" data-transition="slide-in">
+              <img class="media-object pull-left icon_size" src="{{images[9]}}">
+              <div class="media-body">
+                <p class="name_position">{{categories[9]}}</p>
+              </div>
+            </a>
+          </li>
+          <li class="table-view-cell media category_size" onClick="setCategory('{{categories[9]}}')">
+              <div class="media-body">
+                <hr style="height:7em; visibility:hidden;" />
+              </div>
+          </li>
+        </ul>
+
+        <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
+      </form>
+
+    <!-- /.content -->
+    </div>
+  </body>
+</html>

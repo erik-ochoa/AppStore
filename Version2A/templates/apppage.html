@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>App List</title>
+    <!--Making the page feel more natural on mobile devices -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--Linking ratchet framework -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/ratchet-theme-ios.min.css') }}">
+    <!-- our css file -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
+    <!-- ratchet framework javaScript -->
+    <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
+    <!--jquery -->
+    <script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.1.1.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--javaScript-->
+    <script>S
+       
+    
+    </script>
+
+    <style>
+      body { font-size: 18px; }
+      .stars-container {
+      position: relative;
+      display: inline-block;
+      color: transparent;
+      }
+      .stars-container:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '★★★★★';
+      color: lightgray;
+      }
+      .stars-container:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '★★★★★';
+      color: gold;
+      overflow: hidden;
+      }
+      .stars-{{ratings}}:after { width: {{ratings}}%; }
+
+      p {
+      font-size : 12px;
+      background-color : transparents;
+      padding : 0;
+      margin : 0;
+      line-height : 20px;
+      }
+      .absoluteRight{
+      margin-left: 0px;
+      position: relative;
+      float: right;
+      }
+      .get-fix {
+      padding-right: 42px !important;
+      }
+      .smallUnderText {
+      font-size: 8px;
+      color: gray;
+      position: absolute; !important;
+      right: 7.5em;
+      top: 6.5em;
+      }
+      .smallUnderText2 {
+      font-size: 8px;
+      color: gray;
+      position: absolute; !important;
+      right: 6.5em;
+      top: 7.6em;
+      }
+      .smallFont {
+      font-size: 9px;
+      color: gray;
+      position: relative;
+      top: -1em;
+      }
+      .segmented-control .control-item.active{
+      color: #fff;
+      background-color: #979ba0 !important;
+      }
+      .segmented-control {
+      background-color: transparent;
+      border: 1px solid #979ba0 !important;
+      }
+      .segmented-control .control-item {
+      color: #979ba0;
+      border-color: #929292;
+      -webkit-transition: background-color .1s linear;
+      -moz-transition: background-color .1s linear;
+      transition: background-color .1s linear;
+      }
+      .bar .segmented-control {
+      top: 7px;
+      /* margin: 0 auto; */
+      margin-left: 3em;
+      margin-right: 3em;
+      }
+
+      .app_image_size {
+        width: 100px;
+        height: 100px;
+      }
+
+      .SectionFont{
+        font-size: 1em;
+        color: black;
+      }
+
+      .InfoSpan{
+        padding-left:3em;
+        color:black;
+        position: fixed;
+        left: 100px;
+        }
+        .details_image {
+            height: 510px;
+            width: 285px;
+        }
+        .center_image {
+            margin-left: 40px;
+        }
+        .header_shade {
+            background-color: #979ba0;
+            border-color: black;
+        }
+              body:-webkit-scrollbar { 
+  /* This is the magic bit */
+            display: none;
+    overflow:hidden;
+}
+    </style>
+  </head>
+  <body>
+    <header class="bar bar-nav">
+      <a href="/"  data-transition="slide-out">
+      <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
+      <span class="icon icon-left-nav"></span>
+      Categories
+      </button>
+      </a>
+      <a class="icon icon-list pull-right" href="#settingsModal"></a>
+      <h1 class="title">{{category}}</h1>
+
+    </header>
+
+    <div class="content">
+      <ul class="table-view">
+        <li class="table-view-cell media category_size">
+            <img class="media-object pull-left app_image_size" src="{{image_link}}">
+            <div class="media-body">
+                <p class="SectionFont">{{name}}<p>
+                <p>{{category}}</p>
+                <p>Downlaods ({{downloads}})</p>
+                <img style="padding-top:1em; padding-bottom:1em;" class="absoluteRight" src="http://i.imgur.com/2mQnbJO.png" alt="Get">
+            </div>
+              
+
+             <br>
+            <nav class="title">
+              <div class="segmented-control" style="margin-left: 3.2em; margin-right: 3.2em;">
+                <a class="control-item active" style="border-color: black;" href="#item1mobile">Details</a>
+                <a class="control-item header_shade" href="#item2mobile">Reviews</a>
+                <a class="control-item header_shade" href="#item3mobile">Related</a>
+              </div>
+            </nav>
+            <br>
+             <br>
+
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p class="SectionFont">iPhone</p>
+              <hr style="height:0.6em; visibility:hidden;" />
+                      <img style="height: 460px; width: 240px; margin-left: 25px;" src="{{details_image}}">
+              <hr style="height:0.6em; visibility:hidden;" />
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p class="SectionFont">Description</p>
+              <p>This is where the description of the app will go. Fill this in with the description, this is for testing purposes.</p>
+            </div>
+          </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p class="SectionFont">Information</p>
+              <p>Seller<span class="InfoSpan">{{seller}}</span></p>
+              <p>Category<span class="InfoSpan">{{category}}</span></p>
+              <p>Updated<span class="InfoSpan">{{updated}}</span></p>
+              <p>Version<span class="InfoSpan">{{version}}</span></p>
+              <p>Size<span class="InfoSpan">{{size}}</span></p>
+              <p>Family Sharing<span class="InfoSpan">{{family_sharing}}</span></p>
+              <p>Combatibility<span class="InfoSpan">{{compatibility}}</span></p>
+              <p>Languages<span class="InfoSpan">{{languages}}</span></p>
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p class="SectionFont">Privacy Policy</p>
+               <p>{{privacy}}</p>
+            </div>
+        </li>
+        <li class="table-view-cell media category_size">
+            <div class="media-body">
+              <p> © 2017 {{seller}}. All rights reserved.</p>
+            </div>
+            <hr style="height:1em; visibility:hidden;" />
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Settings modal -->
+     <div id="settingsModal" class="modal">
+       <header class="bar bar-nav">
+         <a style="color:gray; top:.5em; position:absolute;" class="pull-left">Edit</p>
+         <a class="icon icon-close pull-right" href="#settingsModal"></a>
+         <h1 class="title">Wish List</h1>
+       </header>
+
+       <div class="content">
+
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+         <h3 style="text-align: center; font-weight:normal;">Wish List</h5>
+
+
+   <p style="text-align: center">You don't currently have anything in your Wish List.</p>
+
+
+       </div>
+     </div><!-- /.modal -->
+
+    <!-- /.content -->
+    <!-- /.modal -->
+    <nav class="bar bar-tab">
+      <a class="tab-item active" href="#">
+      <span class="icon icon-star"></span>
+      <span class="tab-label">Featured</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-list"></span>
+      <span class="tab-label">Top Charts</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-info"></span>
+      <span class="tab-label">Explore</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-search"></span>
+      <span class="tab-label">Search</span>
+      </a>
+      <a class="tab-item" href="#">
+      <span class="icon icon-download"></span>
+      <span class="tab-label">Updates</span>
+      </a>
+    </nav>
+  </body>
+</html>
