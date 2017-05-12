@@ -64,8 +64,8 @@ def applist():
     ratings = []
     ratings_count = []
     i = 1
-    j = 9
-    while i < j:
+    j = 10
+    while i <= j:
         cursor.execute("SELECT name FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         names.append(cursor.fetchone()[0])
 
