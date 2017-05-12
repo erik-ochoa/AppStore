@@ -14,17 +14,15 @@
     <link type="text/css" rel="stylesheet" href="{{ url_for('static',filename='css/app.css') }}">
     <!-- ratchet framework javaScript -->
     <script src="{{ url_for('static',filename='js/ratchet.min.js') }}"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-<!-- javaScript -->
+    <!-- javaScript -->
     <script>
       function setCategory(category) {
         document.getElementById('getcategory').value = category;
         document.forms['send_form'].submit();
       }
     </script>
-<!-- CSS -->
+    <!-- CSS -->
     <style>
       .category_size {
       padding-top: 8px !important;
@@ -36,38 +34,22 @@
       .hidden_input {
       display: none;
       }
-    .icon_size {
-    width: 40px;
-    height: 40px;
-}
-        body:-webkit-scrollbar { 
-  /* This is the magic bit */
-            display: none;
-    overflow:hidden;
-}
-
+      .icon_size {
+      width: 40px;
+      height: 40px;
+      }
+      body:-webkit-scrollbar { 
+      /* This is the magic bit */
+      display: none;
+      overflow:hidden;
+      }
     </style>
   </head>
-<!-- body -->
+  <!-- body -->
   <body>
     <header class="bar bar-nav">
-      <!-- <a href="/"  data-transition="slide-out">
-        <button class="btn btn-link btn-nav pull-left" onClick="location='/'">
-          <span class="icon icon-left-nav"></span>
-          Back
-
-        </button>
-          </a> -->
       <h1 class="title" id="testclick">Categories</h1>
-      <!-- Progress Bar -->
-      <!-- <div class="containerlower">
-        <div class="progress">
-          <div class="progress-bar">
-          </div>
-        </div>
-        </div> -->
     </header>
-
     <div class="content">
       <form action="/applist/" method="POST" id="send_form" >
         <ul class="table-view">
@@ -152,16 +134,14 @@
             </a>
           </li>
           <li class="table-view-cell media category_size" onClick="setCategory('{{categories[9]}}')">
-              <div class="media-body">
-                <hr style="height:7em; visibility:hidden;" />
-              </div>
+            <div class="media-body">
+              <hr style="height:7em; visibility:hidden;" />
+            </div>
           </li>
         </ul>
-
         <input type="text" class="hidden_input" id="getcategory" name="getcategory" value="default">
       </form>
-
-    <!-- /.content -->
+      <!-- /.content -->
     </div>
   </body>
 </html>

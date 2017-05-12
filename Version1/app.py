@@ -37,11 +37,7 @@ mysql.init_app(app)
 def main():
     conn = mysql.connect()
     cursor = conn.cursor()
-
-    #This gets length of the categories table
-    #table_len = cursor.execute("SELECT ID FROM categories ORDER BY id DESC LIMIT 1")
-
-    #Assigning every category to an index c_list and image link to img_link
+    
     categories= []
     images = []
     i = 11
@@ -61,7 +57,6 @@ def applist():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    #Getting gategory from previous page
     category = request.form['getcategory']
     names = []
     images = []
@@ -89,19 +84,12 @@ def applist():
 
         i = i+1
 
-    #uncomment below to display download count
-    #version = 0
-    #uncomment below to display ratings
-    version = 1
-
-    return render_template("applist.html", category=category, version = version, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
-    #return current_app.send_static_file('applist.html')
+    return render_template("applist.html", category=category, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
 
 @app.route('/apppage/', methods = ['POST', 'GET'])
 def apppage():
     conn = mysql.connect()
     cursor = conn.cursor()
-    version = request.form['getversion']
     name = request.form['getname']
     category = request.form['getcategory']
 

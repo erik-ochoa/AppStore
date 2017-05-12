@@ -37,11 +37,7 @@ mysql.init_app(app)
 def main():
     conn = mysql.connect()
     cursor = conn.cursor()
-
-    #This gets length of the categories table
-    #table_len = cursor.execute("SELECT ID FROM categories ORDER BY id DESC LIMIT 1")
-
-    #Assigning every category to an index c_list and image link to img_link
+    
     categories= []
     images = []
     i = 11
@@ -61,7 +57,6 @@ def applist():
     conn = mysql.connect()
     cursor = conn.cursor()
 
-    #Getting gategory from previous page
     category = request.form['getcategory']
     names = []
     images = []
@@ -75,8 +70,10 @@ def applist():
         names.append(cursor.fetchone()[0])
 
         cursor.execute("SELECT image_link FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
+        #uncommend below to display images
+        images.append(cursor.fetchone()[0])
         #uncomment below to get rid of images
-        images.append('noimage')
+        #image_list.append('noimage')
 
         cursor.execute("SELECT downloads FROM applications WHERE app_number=%s AND category_name=%s",(i, category))
         downloads.append(cursor.fetchone()[0])
@@ -87,19 +84,12 @@ def applist():
 
         i = i+1
 
-    #uncomment below to display download count
-    #version = 0
-    #uncomment below to display ratings
-    version = 1
-
-    return render_template("applist.html", category=category, version = version, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
-    #return current_app.send_static_file('applist.html')
+    return render_template("applist.html", category=category, names = names, images = images, downloads = downloads, ratings = ratings, ratings_count = ratings_count)
 
 @app.route('/apppage/', methods = ['POST', 'GET'])
 def apppage():
     conn = mysql.connect()
     cursor = conn.cursor()
-    version = request.form['getversion']
     name = request.form['getname']
     category = request.form['getcategory']
 
@@ -109,8 +99,10 @@ def apppage():
     ratings = str(int(cursor.fetchone()[0]*20))
     cursor.execute("SELECT ratings_count FROM applications WHERE name=%s AND category_name=%s",(name, category))
     ratings_count = cursor.fetchone()[0]
-    image_link = "no image"
-    details_image = "no image"
+    cursor.execute("SELECT image_link FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    image_link = cursor.fetchone()[0] 
+    cursor.execute("SELECT details_image FROM applications WHERE name=%s AND category_name=%s",(name, category))
+    details_image = cursor.fetchone()[0]
     cursor.execute("SELECT description FROM applications WHERE name=%s AND category_name=%s",(name, category))
     description = cursor.fetchone()[0]
     cursor.execute("SELECT seller FROM applications WHERE name=%s AND category_name=%s",(name, category))
