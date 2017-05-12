@@ -45,9 +45,7 @@ def main():
     while i <= j:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         categories.append(cursor.fetchone()[0])
-
-        cursor.execute("SELECT image_link FROM categories WHERE id=%s",(i))
-        images.append(cursor.fetchone()[0])
+        images.append("no images")
         i = i+1
     return render_template("index.html", categories = categories, images = images)
 
