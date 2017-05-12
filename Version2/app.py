@@ -41,7 +41,7 @@ def main():
     categories= []
     images = []
     i = 11
-    j = 20
+    j = 25
     while i <= j:
         cursor.execute("SELECT name FROM categories WHERE id=%s",(i))
         categories.append(cursor.fetchone()[0])
